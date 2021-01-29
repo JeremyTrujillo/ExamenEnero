@@ -1,7 +1,8 @@
 package es.ulpgc.examenenero;
 
 public class Square implements Shape {
-    double side;
+
+    private final double side;
 
     public Square(double side) {
         super();

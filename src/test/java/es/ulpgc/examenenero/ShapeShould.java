@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ShapeShould {
 
     @Test
-    void return_a_squares_area(){
+    void return_area_of_a_square(){
         // GIVEN
         Shape shape = new Square(1);
 
@@ -16,11 +16,21 @@ class ShapeShould {
     }
 
     @Test
-    void return_a_bigger_squares_area(){
+    void return_area_of_another_square(){
         // GIVEN
         Shape shape = new Square(2);
 
         // WHEN + THEN
         assertThat(shape.area()).isEqualTo(4);
     }
+
+    @Test
+    void return_area_of_a_rectangle(){
+        // GIVEN
+        Shape shape = new Rectangle(2,1);
+
+        // WHEN + THEN
+        assertThat(shape.area()).isEqualTo(2);
+    }
+
 }
