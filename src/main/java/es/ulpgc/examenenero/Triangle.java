@@ -13,6 +13,6 @@ public class Triangle implements Shape {
 
     @Override
     public double area() {
-        return 3;
+        return (base*height)/2;
     }
 }
