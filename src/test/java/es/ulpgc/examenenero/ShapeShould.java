@@ -38,4 +38,14 @@ class ShapeShould {
         assertThat(triangle1.area()).isEqualTo(3);
         assertThat(triangle2.area()).isEqualTo(8);
     }
+
+    @Test
+    void return_area_of_a_circle(){
+        // GIVEN
+        Shape circle1 = new Circle(2);
+
+        // WHEN + THEN
+        assertThat(circle1.area()).isEqualTo(12.57);
+
+    }
 }
