@@ -1,14 +1,14 @@
 package es.ulpgc.examenenero;
 
 public class Square implements Shape {
-    int side;
+    double side;
 
-    public Square(int side) {
+    public Square(double side) {
         super();
         this.side = side;
     }
 
     public double area() {
-        return 1.0;
+        return side*side;
     }
 }
