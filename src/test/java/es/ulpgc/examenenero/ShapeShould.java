@@ -2,6 +2,10 @@ package es.ulpgc.examenenero;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class ShapeShould {
@@ -15,6 +19,26 @@ class ShapeShould {
         // WHEN + THEN
         assertThat(square1.area()).isEqualTo(1);
         assertThat(square2.area()).isEqualTo(4);
+    }
+
+    @Test
+    void sort_squares_based_on_their_area(){
+        // GIVEN
+        List<Shape> shapes = new ArrayList<>();
+        Square square1 = new Square(2);
+        Square square2 = new Square(3);
+        Square square3 = new Square(1);
+        shapes.add(square1);
+        shapes.add(square2);
+        shapes.add(square3);
+
+        // WHEN
+        Collections.sort(shapes);
+
+        // THEN
+        assertThat(shapes.get(0)).isEqualTo(square3);
+        assertThat(shapes.get(1)).isEqualTo(square1);
+        assertThat(shapes.get(2)).isEqualTo(square2);
     }
 
     @Test

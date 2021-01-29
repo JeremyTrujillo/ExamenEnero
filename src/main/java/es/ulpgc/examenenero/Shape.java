@@ -1,5 +1,5 @@
 package es.ulpgc.examenenero;
 
-public interface Shape {
+public interface Shape extends Comparable<Shape>{
     double area();
 }

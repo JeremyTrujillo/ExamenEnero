@@ -17,4 +17,9 @@ public class Square implements Shape {
         BigDecimal bigDecimal = BigDecimal.valueOf(area).setScale(2, HALF_UP);
         return bigDecimal.doubleValue();
     }
+
+    @Override
+    public int compareTo(Shape shape) {
+        return Double.compare(this.area(), shape.area());
+    }
 }

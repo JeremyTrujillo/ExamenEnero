@@ -21,4 +21,9 @@ public class Rectangle implements Shape {
         return bigDecimal.doubleValue();
 
     }
+
+    @Override
+    public int compareTo(Shape shape) {
+        return 0;
+    }
 }

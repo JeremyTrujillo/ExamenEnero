@@ -19,4 +19,9 @@ public class Circle implements Shape {
         BigDecimal bigDecimal = BigDecimal.valueOf(area).setScale(2, HALF_UP);
         return bigDecimal.doubleValue();
     }
+
+    @Override
+    public int compareTo(Shape shape) {
+        return 0;
+    }
 }
