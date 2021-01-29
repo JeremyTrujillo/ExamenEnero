@@ -33,4 +33,13 @@ class ShapeShould {
         assertThat(shape.area()).isEqualTo(2);
     }
 
+    @Test
+    void return_area_of_another_rectangle(){
+        // GIVEN
+        Shape shape = new Rectangle(3,2);
+
+        // WHEN + THEN
+        assertThat(shape.area()).isEqualTo(6);
+    }
+
 }

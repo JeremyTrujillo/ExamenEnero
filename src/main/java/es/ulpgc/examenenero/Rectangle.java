@@ -12,6 +12,6 @@ public class Rectangle implements Shape {
 
     @Override
     public double area() {
-        return 2;
+        return base*height;
     }
 }
