@@ -1,10 +1,11 @@
 package es.ulpgc.examenenero;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 import static java.math.RoundingMode.HALF_UP;
 
-public class Square implements Shape {
+public class Square extends Shape {
     private final double side;
 
     public Square(double side) {
@@ -19,7 +20,16 @@ public class Square implements Shape {
     }
 
     @Override
-    public int compareTo(Shape shape) {
-        return Double.compare(this.area(), shape.area());
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Square square = (Square) o;
+        return Double.compare(square.side, side) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), side);
     }
 }

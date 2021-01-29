@@ -1,10 +1,11 @@
 package es.ulpgc.examenenero;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 import static java.math.RoundingMode.HALF_UP;
 
-public class Circle implements Shape {
+public class Circle extends Shape {
 
     private final double radio;
 
@@ -21,7 +22,16 @@ public class Circle implements Shape {
     }
 
     @Override
-    public int compareTo(Shape shape) {
-        return 0;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Circle circle = (Circle) o;
+        return Double.compare(circle.radio, radio) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), radio);
     }
 }
