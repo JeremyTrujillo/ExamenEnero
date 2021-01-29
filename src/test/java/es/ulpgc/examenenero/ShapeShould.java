@@ -25,9 +25,9 @@ class ShapeShould {
     void sort_squares_based_on_their_area(){
         // GIVEN
         List<Shape> shapes = new ArrayList<>();
-        Square square1 = new Square(2);
-        Square square2 = new Square(3);
-        Square square3 = new Square(1);
+        Shape square1 = new Square(2);
+        Shape square2 = new Square(3);
+        Shape square3 = new Square(1);
         shapes.add(square1);
         shapes.add(square2);
         shapes.add(square3);
@@ -56,9 +56,9 @@ class ShapeShould {
     void sort_rectangles_based_on_their_area(){
         // GIVEN
         List<Shape> shapes = new ArrayList<>();
-        Rectangle rectangle1 = new Rectangle(3, 2);
-        Rectangle rectangle2 = new Rectangle(2, 1);
-        Rectangle rectangle3 = new Rectangle(4, 3);
+        Shape rectangle1 = new Rectangle(3, 2);
+        Shape rectangle2 = new Rectangle(2, 1);
+        Shape rectangle3 = new Rectangle(4, 3);
         shapes.add(rectangle1);
         shapes.add(rectangle2);
         shapes.add(rectangle3);
@@ -87,9 +87,9 @@ class ShapeShould {
     void sort_triangles_based_on_their_area(){
         // GIVEN
         List<Shape> shapes = new ArrayList<>();
-        Triangle triangle1 = new Triangle(3, 2);
-        Triangle triangle2 = new Triangle(2, 1);
-        Triangle triangle3 = new Triangle(4, 3);
+        Shape triangle1 = new Triangle(3, 2);
+        Shape triangle2 = new Triangle(2, 1);
+        Shape triangle3 = new Triangle(4, 3);
         shapes.add(triangle1);
         shapes.add(triangle2);
         shapes.add(triangle3);
@@ -118,9 +118,9 @@ class ShapeShould {
     void sort_circles_based_on_their_area(){
         // GIVEN
         List<Shape> shapes = new ArrayList<>();
-        Circle circle1 = new Circle(4);
-        Circle circle2 = new Circle(3);
-        Circle circle3 = new Circle(2);
+        Shape circle1 = new Circle(4);
+        Shape circle2 = new Circle(3);
+        Shape circle3 = new Circle(2);
         shapes.add(circle1);
         shapes.add(circle2);
         shapes.add(circle3);
@@ -132,5 +132,28 @@ class ShapeShould {
         assertThat(shapes.get(0)).isEqualTo(circle3);
         assertThat(shapes.get(1)).isEqualTo(circle2);
         assertThat(shapes.get(2)).isEqualTo(circle1);
+    }
+
+    @Test
+    void sort_shapes_of_different_types_based_on_their_area(){
+        // GIVEN
+        List<Shape> shapes = new ArrayList<>();
+        Shape square = new Square(5);
+        Shape rectangle = new Rectangle(3,2);
+        Shape triangle = new Triangle(4,4);
+        Shape circle = new Circle(1);
+        shapes.add(square);
+        shapes.add(rectangle);
+        shapes.add(triangle);
+        shapes.add(circle);
+
+        // WHEN
+        Collections.sort(shapes);
+
+        // THEN
+        assertThat(shapes.get(0)).isEqualTo(circle);
+        assertThat(shapes.get(1)).isEqualTo(rectangle);
+        assertThat(shapes.get(2)).isEqualTo(triangle);
+        assertThat(shapes.get(3)).isEqualTo(square);
     }
 }
