@@ -43,9 +43,11 @@ class ShapeShould {
     void return_area_of_a_circle(){
         // GIVEN
         Shape circle1 = new Circle(2);
+        Shape circle2 = new Circle(3);
 
         // WHEN + THEN
         assertThat(circle1.area()).isEqualTo(12.57);
+        assertThat(circle2.area()).isEqualTo(28.27);
 
     }
 }

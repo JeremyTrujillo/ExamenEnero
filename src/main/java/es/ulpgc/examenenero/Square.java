@@ -1,5 +1,9 @@
 package es.ulpgc.examenenero;
 
+import java.math.BigDecimal;
+
+import static java.math.RoundingMode.HALF_UP;
+
 public class Square implements Shape {
     private final double side;
 
@@ -9,6 +13,8 @@ public class Square implements Shape {
     }
 
     public double area() {
-        return side*side;
+        double area = side * side;
+        BigDecimal bigDecimal = BigDecimal.valueOf(area).setScale(2, HALF_UP);
+        return bigDecimal.doubleValue();
     }
 }

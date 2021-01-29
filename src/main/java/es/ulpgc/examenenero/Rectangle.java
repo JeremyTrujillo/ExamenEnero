@@ -1,5 +1,9 @@
 package es.ulpgc.examenenero;
 
+import java.math.BigDecimal;
+
+import static java.math.RoundingMode.HALF_UP;
+
 public class Rectangle implements Shape {
     private final double base;
     private final double height;
@@ -12,6 +16,9 @@ public class Rectangle implements Shape {
 
     @Override
     public double area() {
-        return base*height;
+        double area = base * height;
+        BigDecimal bigDecimal = BigDecimal.valueOf(area).setScale(2, HALF_UP);
+        return bigDecimal.doubleValue();
+
     }
 }
