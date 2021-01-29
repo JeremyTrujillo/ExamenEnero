@@ -42,4 +42,13 @@ class ShapeShould {
         assertThat(shape.area()).isEqualTo(6);
     }
 
+    @Test
+    void return_area_of_a_triangle(){
+        // GIVEN
+        Shape shape = new Triangle(3,2);
+
+        // WHEN + THEN
+        assertThat(shape.area()).isEqualTo(3);
+    }
+
 }
